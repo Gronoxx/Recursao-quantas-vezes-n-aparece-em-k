@@ -1,0 +1,26 @@
+#include <stdio.h>
+int iq (int k, int n)
+{
+    if (n>k)
+    return 0;
+    if(k<0)
+    return 0;
+    if ((k>10) && (k%10==n))
+    return 1 + iq(k/10, n);
+    if((k>10) && (k%10!=n))
+    return iq(k/10,n);
+    if((k<10) && (k==n))
+    return 1;
+    if((k<10) &&(k!=n))
+    return 0;
+}
+int main()
+{
+    int a,b;
+    printf("Insira dois numeros para calcular quantas vezes b aparece em a:\n");
+    scanf("%i",&a);
+    scanf("%i",&b);
+    printf("%d",iq(a,b));
+
+    return 0;
+}
